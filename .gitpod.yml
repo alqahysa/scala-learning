@@ -1,0 +1,16 @@
+image: gitpod/workspace-full-vnc
+
+tasks:
+  - init: |
+      sudo apt-get update
+      sudo apt-get install -y openjdk-11-jdk
+      curl -s "https://get.sdkman.io" | bash
+      source "$HOME/.sdkman/bin/sdkman-init.sh"
+      sdk install scala
+      sdk install sbt
+  - command: |
+      sudo apt-get install -y x11-apps
+      /usr/local/bin/gp-code
+vscode:
+  extensions:
+    - scala-lang.scala
